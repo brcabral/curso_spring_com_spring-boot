@@ -29,14 +29,14 @@ public class CadastroCidadeService {
 		cidades.save(cidade);
 	}
 
-	@Transactional
-	public void excluir(Long codigo) {
-		try {
-			cidades.delete(codigo);
-			cidades.flush();
-		} catch (PersistenceException e) {
-			throw new ImpossivelExcluirEntidadeException(
-					"Não foi possível a cidade. \nEla já foi utilizada em algum cliente.");
-		}
-	}
+//	@Transactional
+//	public void excluir(Long codigo) {
+//		try {
+//			cidades.delete(codigo);
+//			cidades.flush();
+//		} catch (PersistenceException e) {
+//			throw new ImpossivelExcluirEntidadeException(
+//					"Não foi possível a cidade. \nEla já foi utilizada em algum cliente.");
+//		}
+//	}
 }

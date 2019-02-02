@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -35,6 +37,10 @@ public class CervejasImpl implements CervejasQueries {
 	@Transactional(readOnly = true)
 	public Page<Cerveja> filtrar(CervejaFilter filtro, Pageable pageable) {
 		Criteria criteria = manager.unwrap(Session.class).createCriteria(Cerveja.class);
+		
+//		https://stackoverflow.com/questions/40720799/deprecated-createcriteria-method-in-hibernate-5
+//		CriteriaBuilder builder = manager.getCriteriaBuilder();
+//		CriteriaQuery<Cerveja> criteria = builder.createQuery(Cerveja.class);
 
 		paginacaoUtil.preparar(criteria, pageable);
 		adicionarFiltro(filtro, criteria);

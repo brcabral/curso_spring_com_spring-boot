@@ -14,8 +14,6 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import com.algaworks.brewer.mail.Mailer;
 
 @Configuration
-@ComponentScan(basePackageClasses = Mailer.class)
-@PropertySource({ "classpath:env/mail-${ambiente:local}.properties" })
 @PropertySource(value = { "file://${HOME}/workspace/brewer/config/brewer-mail.properties" }, ignoreResourceNotFound = true)
 @PropertySource(value = { "file:\\C:\\Users\\oliveirb\\Downloads\\curso-spring\\config\\brewer-mail.properties" }, ignoreResourceNotFound = true)
 public class MailConfig {
@@ -27,8 +25,8 @@ public class MailConfig {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.sendgrid.net");
 		mailSender.setPort(587);
-		mailSender.setUsername(env.getProperty("username"));
-		mailSender.setPassword(env.getProperty("password"));
+		mailSender.setUsername(env.getProperty("brewer.mail.username"));
+		mailSender.setPassword(env.getProperty("brewer.mail.password"));
 
 		Properties props = new Properties();
 		props.put("mail.transport.protocol", "smtp");

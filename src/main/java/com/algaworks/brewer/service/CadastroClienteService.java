@@ -29,14 +29,14 @@ public class CadastroClienteService {
 		clientes.save(cliente);
 	}
 
-	@Transactional
-	public void excluir(Long codigo) {
-		try {
-			clientes.delete(codigo);
-			clientes.flush();
-		} catch (PersistenceException e) {
-			throw new ImpossivelExcluirEntidadeException(
-					"Não foi possível excluir o cliente. \nEle já foi utilizada em alguma venda");
-		}
-	}
+//	@Transactional
+//	public void excluir(Long codigo) {
+//		try {
+//			clientes.delete(codigo);
+//			clientes.flush();
+//		} catch (PersistenceException e) {
+//			throw new ImpossivelExcluirEntidadeException(
+//					"Não foi possível excluir o cliente. \nEle já foi utilizada em alguma venda");
+//		}
+//	}
 }

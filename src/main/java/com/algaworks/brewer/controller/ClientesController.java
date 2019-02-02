@@ -108,14 +108,14 @@ public class ClientesController {
 		return mv;
 	}
 
-	@DeleteMapping("/{codigo}")
-	public @ResponseBody ResponseEntity<?> excluir(@PathVariable("codigo") Long codigo) {
-		try {
-			cadastroClienteService.excluir(codigo);
-		} catch (ImpossivelExcluirEntidadeException e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-
-		return ResponseEntity.ok().build();
-	}
+//	@DeleteMapping("/{codigo}")
+//	public @ResponseBody ResponseEntity<?> excluir(@PathVariable("codigo") Long codigo) {
+//		try {
+//			cadastroClienteService.excluir(codigo);
+//		} catch (ImpossivelExcluirEntidadeException e) {
+//			return ResponseEntity.badRequest().body(e.getMessage());
+//		}
+//
+//		return ResponseEntity.ok().build();
+//	}
 }

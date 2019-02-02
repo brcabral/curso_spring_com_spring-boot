@@ -55,14 +55,14 @@ public class CadastroUsuarioService {
 		statusUsuario.executar(codigos, usuarios);
 	}
 
-	@Transactional
-	public void excluir(Long codigo) {
-		try {
-			usuarios.delete(codigo);
-			usuarios.flush();
-		} catch (PersistenceException e) {
-			throw new ImpossivelExcluirEntidadeException(
-					"Não foi possível excluir o usuário. \nEle já foi utilizada em alguma venda");
-		}
-	}
+//	@Transactional
+//	public void excluir(Long codigo) {
+//		try {
+//			usuarios.delete(codigo);
+//			usuarios.flush();
+//		} catch (PersistenceException e) {
+//			throw new ImpossivelExcluirEntidadeException(
+//					"Não foi possível excluir o usuário. \nEle já foi utilizada em alguma venda");
+//		}
+//	}
 }

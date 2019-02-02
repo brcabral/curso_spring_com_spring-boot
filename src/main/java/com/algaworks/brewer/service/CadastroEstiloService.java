@@ -29,14 +29,14 @@ public class CadastroEstiloService {
 		return estilos.saveAndFlush(estilo);
 	}
 
-	@Transactional
-	public void excluir(Long codigo) {
-		try {
-			estilos.delete(codigo);
-			estilos.flush();
-		} catch (PersistenceException e) {
-			throw new ImpossivelExcluirEntidadeException(
-					"Não foi possível excluir o estilo. \nEle já foi utilizado em alguma cerveja.");
-		}
-	}
+//	@Transactional
+//	public void excluir(Long codigo) {
+//		try {
+//			estilos.delete(codigo);
+//			estilos.flush();
+//		} catch (PersistenceException e) {
+//			throw new ImpossivelExcluirEntidadeException(
+//					"Não foi possível excluir o estilo. \nEle já foi utilizado em alguma cerveja.");
+//		}
+//	}
 }

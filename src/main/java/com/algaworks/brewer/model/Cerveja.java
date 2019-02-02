@@ -18,10 +18,10 @@ import javax.persistence.Transient;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.util.StringUtils;
 
 import com.algaworks.brewer.validation.SKU;
@@ -35,12 +35,10 @@ public class Cerveja {
 	private Long codigo;
 
 	@SKU
-	//@NotBlank(message = "O SKU é obrigatório")
 	@NotBlank
 	private String sku;
 
 	@NotBlank
-	//@NotBlank(message = "O nome é obrigatório")
 	private String nome;
 
 	@NotBlank(message = "A descrição é obrigatória")

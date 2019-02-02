@@ -51,9 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.and()
-			.exceptionHandling()
-				.accessDeniedPage("/403")
-				.and()
 			.sessionManagement()
 				.maximumSessions(1)  // Permitir apenas 1 conexão com o mesmo login
 				.expiredUrl("/login")

@@ -10,6 +10,7 @@ import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.algaworks.brewer.storage.FotoStorage;
@@ -17,6 +18,7 @@ import com.algaworks.brewer.storage.FotoStorage;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.name.Rename;
 
+@Component
 public class FotoStorageLocal implements FotoStorage {
 	private static final Logger LOGGER = LoggerFactory.getLogger(FotoStorageLocal.class);
 	private static final String THUMBNAIL_PREFIX = "thumbnail.";
@@ -26,13 +28,11 @@ public class FotoStorageLocal implements FotoStorage {
 
 	public FotoStorageLocal() {
 		// Linux e MAC
-		// this.local = getDefault().getPath(System.getenv("HOME"), ".brewerfotos");
+		this.local = getDefault().getPath(System.getenv("HOME"), "/workspace/brewer/brewerfotos");
 
 		// Windows
-		// this.local = getDefault().getPath(System.getProperty("user.home"), ".brewerfotos");
-
 		// this.local = getDefault().getPath(System.getProperty("user.home"), "Downloads\\curso-spring\\brewerfotos");
-		this.local = getDefault().getPath(System.getenv("HOME"), "/workspace/brewer/brewerfotos");
+
 		criarPastas();
 	}
 
